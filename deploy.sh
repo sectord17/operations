@@ -13,19 +13,19 @@ SYSTEMCTL_SERVICE=""
 case "${PROJECT}" in
 	"server-master")
 		PROJECT_PATH="${SECTORD17_PATH}/server-master"
-		BUILDS_PATH="~/jobs/Sector\ D-17\ Server\ Master/builds"
-		SYSTEMCTL_SERVICE="sectord17-server-master.service"
+		BUILDS_PATH="~/jobs/master/builds"
+		SYSTEMCTL_SERVICE="sectord17-master.service"
 		;;
 
 	"server-slave")
 		PROJECT_PATH="${SECTORD17_PATH}/server-slave"
-    BUILDS_PATH="~/jobs/Sector\ D-17\ Server\ Slave/builds"
-		SYSTEMCTL_SERVICE="sectord17-server-slave.service"
+    BUILDS_PATH="~/jobs/slave/builds"
+		SYSTEMCTL_SERVICE="sectord17-slave.service"
 		;;
 
 	"server-game")
 		PROJECT_PATH="${SECTORD17_PATH}/server-game"
-    BUILDS_PATH="~/jobs/Sector\ D-17\ Server\ Game/builds"
+    BUILDS_PATH="~/jobs/game/builds"
 		SYSTEMCTL_SERVICE=""
 		;;
 
@@ -45,7 +45,7 @@ fi
 ARCHIVE_PATH="${SECTORD17_PATH}/archive-${PROJECT}.zip"
 ARCHIVE_REMOTE_PATH="${BUILDS_PATH}/${BUILD_NAME}/archive.zip"
 
-scp jenkins@lemur.gammerce.pl:"${ARCHIVE_REMOTE_PATH}" "${ARCHIVE_PATH}"
+scp jenkins@localhost:"${ARCHIVE_REMOTE_PATH}" "${ARCHIVE_PATH}"
 if [ ! $? -eq 0 ]; then
 	echo "[ERROR] Failed downloading project archive"
 	exit 1
