@@ -19,13 +19,13 @@ case "${PROJECT}" in
 
 	"server-slave")
 		PROJECT_PATH="${SECTORD17_PATH}/server-slave"
-                BUILDS_PATH="~/jobs/Sector\ D-17\ Server\ Slave/builds"
+    BUILDS_PATH="~/jobs/Sector\ D-17\ Server\ Slave/builds"
 		SYSTEMCTL_SERVICE="sectord17-server-slave.service"
 		;;
 
 	"server-game")
 		PROJECT_PATH="${SECTORD17_PATH}/server-game"
-                BUILDS_PATH="~/jobs/Sector\ D-17\ Server\ Game/builds"
+    BUILDS_PATH="~/jobs/Sector\ D-17\ Server\ Game/builds"
 		SYSTEMCTL_SERVICE=""
 		;;
 

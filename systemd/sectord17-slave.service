@@ -1,0 +1,15 @@
+[Unit]
+Description=Sector D-17: Server Slave
+
+[Service]
+ExecStart=/usr/bin/nodejs /home/sectord17/server-slave/app.js
+Restart=always
+User=sectord17
+Group=sectord17
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+Environment=DEBUG=sectord17*
+WorkingDirectory=/home/sectord17/server-slave
+
+[Install]
+WantedBy=multi-user.target

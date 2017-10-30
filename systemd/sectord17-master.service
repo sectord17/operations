@@ -1,0 +1,15 @@
+[Unit]
+Description=Sector D-17: Server Master
+
+[Service]
+ExecStart=/usr/bin/nodejs /home/sectord17/server-master/app.js
+Restart=always
+User=sectord17
+Group=sectord17
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+Environment=DEBUG=sectord17*
+WorkingDirectory=/home/sectord17/server-master
+
+[Install]
+WantedBy=multi-user.target
